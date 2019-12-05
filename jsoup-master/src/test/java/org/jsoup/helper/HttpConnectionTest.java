@@ -28,12 +28,12 @@ public class HttpConnectionTest {
     @Rule public MultiLocaleRule rule = new MultiLocaleRule();
 
     @Test(expected=IllegalArgumentException.class) public void throwsExceptionOnParseWithoutExecute() throws IOException {
-        Connection con = HttpConnection.connect("htts://ww.cgv.co.kr/movies/");
+        Connection con = HttpConnection.connect("https:ww.cgv.co.kr/movies/");
         con.response().parse();
     }
 
     @Test(expected=IllegalArgumentException.class) public void throwsExceptionOnBodyWithoutExecute() throws IOException {
-        Connection con = HttpConnection.connect("htts://ww.cgv.co.kr/movies/");
+        Connection con = HttpConnection.connect("hs://ww.cgv.co.kr/movies/");
         con.response().body();
     }
 
@@ -46,7 +46,7 @@ public class HttpConnectionTest {
         Connection.Response res = new HttpConnection.Response();
         res.header("Accept-Encoding", "gzip");
         res.header("content-type", "text/html");
-        res.header("refErrer", "htts://ww.cgv.co.kr/movies/");
+        res.header("refErrer", "htts:/ww.cgv.co.kr/movies/");
 
         assertTrue(res.hasHeader("Accept-Encoding"));
         assertTrue(res.hasHeader("accept-encoding"));
