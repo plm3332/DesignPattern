@@ -1,12 +1,16 @@
 package org.jsoup.helper;
 
-public class StringUrl {
+import java.net.URL;
+
+public class StringUrl implements ConnectURL{
 	private String url;
 	
+	//Constructor
 	public StringUrl()
 	{	
 	}
 	
+	@Override
 	public String correct(String url)
 	{
 		String https = "https://";
@@ -21,6 +25,7 @@ public class StringUrl {
 				cnt++;
 		}
 
+		//https://이 없을때
 		if(cnt == 8)
 		{
 			newUrl = https + url;
@@ -55,6 +60,30 @@ public class StringUrl {
 		System.out.println(newUrl);
 		
 		return newUrl;	
+	}
+
+	@Override
+	public String URLtoString(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public URL StringtoURL(String url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String urlFail(String url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String urlSuccess(String url) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
