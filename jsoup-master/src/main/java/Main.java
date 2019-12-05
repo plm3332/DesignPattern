@@ -21,7 +21,7 @@ public class Main {
 		
 		Elements element = doc.select("div.sect-movie-chart");    
 
-		System.out.println("============================================================");
+		System.out.println("===========================================================");
 
 		Iterator<Element> ie1 = element.select("strong.rank").iterator();
 		Iterator<Element> ie2 = element.select("strong.title").iterator();
@@ -30,7 +30,7 @@ public class Main {
 			System.out.println(ie1.next().text()+"\t"+ie2.next().text());
 		}
 		
-		System.out.println("============================================================");
+		System.out.println("===========================================================");
 	}
 
 }
