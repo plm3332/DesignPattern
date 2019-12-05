@@ -65,15 +65,23 @@ public class HttpConnection implements Connection {
     private static final int HTTP_TEMP_REDIR = 307; // http/1.1 temporary redirect, not in Java's set.
     private static final String DefaultUploadType = "application/octet-stream";
 
+    //String type url correction
     public static Connection connect(String url) {
         Connection con = new HttpConnection();
-        con.url(url);
+        ConnectURL stringUrl = new StringUrl();
+        String newUrl = stringUrl.correct(url);
+        con.url(newUrl);
         return con;
     }
 
+    //Url type url correction
     public static Connection connect(URL url) {
         Connection con = new HttpConnection();
-        con.url(url);
+        ConnectURL urlurl=new UrlUrl();
+        String tUrl=urlurl.URLtoString(url);
+        String tempUrl=urlurl.correct(tUrl);
+        URL newUrl=urlurl.StringtoURL(tempUrl);
+        con.url(newUrl);
         return con;
     }
 
