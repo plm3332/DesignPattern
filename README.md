@@ -1,2 +1,2 @@
 # DesignPattern
-Design Pattern Term Project about Jsoup.
+Design Pattern Term Project about Jsoup
