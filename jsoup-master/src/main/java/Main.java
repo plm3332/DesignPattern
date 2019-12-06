@@ -11,15 +11,10 @@ import org.jsoup.select.Elements;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// cgv 영화 순위
 		String url = "https://cgv.co.kr/movies/"; 
-//		URL url=null;
-//		try {
-//			url = new URL("https://www.cgv.co.kr/movies/");
-//		} catch (MalformedURLException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
+
 		Document doc = null;        
 
 		try {
@@ -32,7 +27,9 @@ public class Main {
 
 		System.out.println("============================================================");
 
+		//영화 순위
 		Iterator<Element> ie1 = element.select("strong.rank").iterator();
+		//영화 제목
 		Iterator<Element> ie2 = element.select("strong.title").iterator();
 				        
 		while (ie1.hasNext()) {
